@@ -1,5 +1,5 @@
 function ProjectHeader() {
-  return <div>ProjectHeader</div>;
+  return <div>Project Header</div>;
 }
 
 export default ProjectHeader;

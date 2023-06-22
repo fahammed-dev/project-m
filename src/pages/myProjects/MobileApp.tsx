@@ -1,5 +1,5 @@
 function MobileApp() {
-  return <div>MobileApp</div>;
+  return <div>MobileApp Page</div>;
 }
 
 export default MobileApp;
