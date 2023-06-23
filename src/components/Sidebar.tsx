@@ -26,19 +26,19 @@ function Sidebar({ aside, setAside }: Props) {
 
   return (
     <div>
-      <header className="flex items-center justify-between px-5 py-[27.25px] border-b border-solid border-color-gray-secondary">
+      <header className="flex items-center justify-between border-b border-solid border-color-gray-secondary px-5 py-[27.25px]">
         <div className="flex items-center">
           <img src={Logo} alt="Logo" height="24px" width="24px" />
-          <h1 className="font-semibold text-[20px] ml-2">Project M.</h1>
+          <h1 className="ml-2 text-[20px] font-semibold">Project M.</h1>
         </div>
         <button onClick={() => setAside(!aside)}>
           <ChevronDoubleLeftIcon className="h-[20px] text-color-gray-primary" />
         </button>
       </header>
       <main>
-        <div className="px-3 py-7 rounded-bl-[30px] h-[100%]">
+        <div className="h-[100%] rounded-bl-[30px] px-3 py-7">
           {/* pages */}
-          <div className="flex flex-col gap-6 pl-2 border-b border-solid border-color-gray-secondary pb-7">
+          <div className="flex flex-col gap-6 border-b border-solid border-color-gray-secondary pb-7 pl-2">
             <div className={`${flexStyle}`}>
               <Squares2X2Icon className={`${iconStyle}`} />
               <h4 className={`${fontStyle}`}>Home</h4>
@@ -62,8 +62,8 @@ function Sidebar({ aside, setAside }: Props) {
           </div>
           {/* projects */}
           <div className="flex flex-col py-7">
-            <div className="flex justify-start items-center mb-4 pl-2.5">
-              <p className="uppercase text-xs font-semibold text-color-gray-primary pr-[105px]">
+            <div className="mb-4 flex items-center justify-start pl-2.5">
+              <p className="pr-[105px] text-xs font-semibold uppercase text-color-gray-primary">
                 My Projects
               </p>
               <div>
@@ -108,20 +108,20 @@ function Sidebar({ aside, setAside }: Props) {
             </div>
           </div>
           {/* message */}
-          <div className="flex flex-col items-center  bg-color-white-primary px-5 pb-6 mx-2 rounded-2xl before:content[''] before:bg-color-white-primary before:h-[70px] before:w-[70px] before:rounded-full before:-mt-10 mt-16">
+          <div className="before:content[''] mx-2 mt-16  flex flex-col items-center rounded-2xl bg-color-white-primary px-5 pb-6 before:-mt-10 before:h-[70px] before:w-[70px] before:rounded-full before:bg-color-white-primary">
             <div className="-mt-11 mb-6">
               <LightBulbIcon
                 className={`${iconStyle} text-color-yellow-secondary`}
               />
             </div>
-            <h5 className="font-medium text-sm text-color-black-secondary">
+            <h5 className="text-sm font-medium text-color-black-secondary">
               Thought Time
             </h5>
-            <p className="text-xs text-color-gray-primary text-center py-3">
+            <p className="py-3 text-center text-xs text-color-gray-primary">
               We don’t have any notice for you, till then you can share your
               thoughts with your peers.
             </p>
-            <button className="bg-color-white-secondary py-3 px-7 font-medium text-sm rounded">
+            <button className="rounded bg-color-white-secondary px-7 py-3 text-sm font-medium">
               Write a message
             </button>
           </div>

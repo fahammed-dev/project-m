@@ -1,3 +1,4 @@
+// icons import
 import {
   BellSnoozeIcon,
   CalendarDaysIcon,
@@ -7,21 +8,30 @@ import {
   ChevronDownIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
+
+// other import
 import { useOutletContext } from 'react-router-dom';
+
+// images import
 import Logo from '../assets/logo.png';
 import Profile from '../assets/profile.png';
 
 type MyContextType = {
   aside: boolean;
   isAboveMediumScreens: boolean;
+  isAboveSmallScreens: boolean;
   setAside: (value: boolean) => void;
 };
 
 function Header() {
   const iconStyle = 'h-[24px] text-color-gray-primary';
   const flexStyle = 'flex items-center';
-  const { aside, setAside, isAboveMediumScreens }: MyContextType =
-    useOutletContext();
+  const {
+    aside,
+    setAside,
+    isAboveMediumScreens,
+    isAboveSmallScreens,
+  }: MyContextType = useOutletContext();
 
   // decide what to render
   let content = null;
@@ -46,7 +56,6 @@ function Header() {
       </div>
     );
   }
-
   if (!aside && !isAboveMediumScreens) {
     content = (
       <div className={`${flexStyle}`}>
@@ -57,33 +66,41 @@ function Header() {
       </div>
     );
   }
-  console.log(aside);
 
   return (
     <div className={`${flexStyle} justify-between`}>
       {/* search */}
       {content}
-      <form
-        className={`${flexStyle} flex-[0_0_39%] ${
-          !isAboveMediumScreens && 'flex-[0_0_47%]'
-        } ${!aside && 'flex-[0_0_50%] -ml-12'} ${
-          isAboveMediumScreens && aside ? 'ml-5' : ''
-        }`}
-      >
-        <input
-          type="text"
-          placeholder="Search for anything..."
-          className={`relative text-color-gray-primary bg-color-white-primary ${
-            !aside && isAboveMediumScreens ? 'mr-12' : ''
-          } pl-14 py-2.5 w-[100%] rounded-md outline-none`}
-        />
-        <button className="absolute ml-3.5">
-          <MagnifyingGlassIcon className={`${iconStyle}`} />
-        </button>
-      </form>
-      <div className={`${flexStyle} gap-11`}>
+      {isAboveSmallScreens && (
+        <form
+          className={`${flexStyle} flex-[0_0_39%] ${
+            !isAboveMediumScreens || (!aside && 'ml-5 flex-[0_0_55%]')
+          } ${!aside && aside && '-ml-12 flex-[0_0_50%]'} ${
+            isAboveMediumScreens && aside ? 'ml-5' : ''
+          }`}
+        >
+          <input
+            type="text"
+            placeholder="Search for anything..."
+            className={`relative bg-color-white-primary text-color-gray-primary ${
+              !aside && isAboveMediumScreens ? 'mr-12' : ''
+            } w-[100%] rounded-md py-2.5 pl-14 outline-none`}
+          />
+          <button className="absolute ml-3.5">
+            <MagnifyingGlassIcon className={`${iconStyle}`} />
+          </button>
+        </form>
+      )}
+      <div className={`${flexStyle} ${isAboveMediumScreens ? 'gap-11' : ''}`}>
         {/* icons */}
-        <div className={`${flexStyle} gap-5`}>
+        <div
+          className={`${flexStyle} ${isAboveMediumScreens ? 'gap-5' : 'gap-3'}`}
+        >
+          {!isAboveSmallScreens && (
+            <button>
+              <MagnifyingGlassIcon className={`${iconStyle}`} />
+            </button>
+          )}
           <button>
             <CalendarDaysIcon className={`${iconStyle}`} />
           </button>
@@ -95,16 +112,26 @@ function Header() {
           </button>
         </div>
         {/* profile */}
-        <div className={`${flexStyle} gap-2.5 mr-5`}>
-          <div>
-            <h5 className="font-medium text-color-black-primary text-[16px] text-right">
-              Anima Agarwal
-            </h5>
-            <p className="font-light text-color-gray-primary text-[14px] text-right">
-              U.P, India
-            </p>
-          </div>
-          <img src={Profile} alt="Anima Agarwal" className="rounded-full" />
+        <div
+          className={`${flexStyle} gap-2.5 ${
+            isAboveMediumScreens ? 'mr-5' : 'mr-0'
+          }`}
+        >
+          {isAboveMediumScreens && (
+            <div>
+              <h5 className="text-right text-[16px] font-medium text-color-black-primary">
+                Anima Agarwal
+              </h5>
+              <p className="text-right text-[14px] font-light text-color-gray-primary">
+                U.P, India
+              </p>
+            </div>
+          )}
+          <img
+            src={Profile}
+            alt="Anima Agarwal"
+            className={`${!isAboveMediumScreens && 'ml-3'} rounded-full`}
+          />
           <button>
             <ChevronDownIcon className={`${iconStyle}`} />
           </button>

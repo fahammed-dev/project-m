@@ -27,7 +27,7 @@ function PageLayout() {
 
   if (!aside && !isAboveMediumScreens) {
     content = (
-      <div className="absolute bg-color-white-primary px-6 py-6 rounded-bl-[30px] h-[100%]">
+      <div className="absolute h-[100%] rounded-bl-[30px] bg-color-white-primary px-6 py-6">
         {/* pages */}
         <div className="flex flex-col gap-6 border-b border-solid border-color-gray-secondary pb-8">
           <div className={`${flexStyle}`}>
@@ -53,8 +53,8 @@ function PageLayout() {
         </div>
         {/* projects */}
         <div className="flex flex-col py-8">
-          <div className="flex justify-between items-center">
-            <p className="uppercase text-xs font-semibold text-color-gray-primary">
+          <div className="flex items-center justify-between">
+            <p className="text-xs font-semibold uppercase text-color-gray-primary">
               My Projects
             </p>
             <PlusCircleIcon className="h-3.5 text-color-gray-primary" />
@@ -95,7 +95,9 @@ function PageLayout() {
   }
   return (
     <div>
-      <header className="relative border-b border-solid border-color-gray-secondary px-6 py-5">
+      <header
+        className={`relative border-b border-solid border-color-gray-secondary px-6 py-5`}
+      >
         <Header />
       </header>
       {/* responsive menu */}
