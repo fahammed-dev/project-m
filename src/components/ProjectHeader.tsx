@@ -7,6 +7,7 @@ import {
   Squares2X2Icon,
   UsersIcon,
 } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 import Image1 from '../assets/invite-img-1.png';
 import Image2 from '../assets/invite-img-2.png';
 import Image3 from '../assets/invite-img-3.png';
@@ -21,20 +22,29 @@ function ProjectHeader() {
       <div className={`${flexStyle} justify-between pb-7`}>
         <div className={`${flexStyle} gap-3`}>
           <h1 className="mr-1.5 text-[46px] font-semibold">Mobile App</h1>
-          <PencilIcon
-            className={`${iconStyle} rounded-md bg-color-bg-lavender p-1 text-color-lavender-primary`}
-          />
-          <EllipsisHorizontalCircleIcon
-            className={`${iconStyle} rounded-md bg-color-bg-lavender p-0.5 text-color-lavender-primary`}
-          />
+          <button>
+            <PencilIcon
+              className={`${iconStyle} rounded-md bg-color-bg-lavender p-1 text-color-lavender-primary`}
+            />
+          </button>
+          <button>
+            <EllipsisHorizontalCircleIcon
+              className={`${iconStyle} rounded-md bg-color-bg-lavender p-0.5 text-color-lavender-primary`}
+            />
+          </button>
         </div>
         <div className={`${flexStyle}`}>
-          <PlusCircleIcon
-            className={`${iconStyle} h-[15px] rounded-md bg-color-bg-lavender p-0.5 text-color-lavender-primary`}
-          />
-          <span className="mx-2 text-base font-medium text-color-lavender-primary">
+          <button>
+            <PlusCircleIcon
+              className={`${iconStyle} h-[15px] rounded-md bg-color-bg-lavender p-0.5 text-color-lavender-primary`}
+            />
+          </button>
+          <Link
+            to="#"
+            className="mx-2 text-base font-medium text-color-lavender-primary"
+          >
             Invite
-          </span>
+          </Link>
           <div className={`${flexStyle} -space-x-2 overflow-hidden`}>
             <img src={Image1} alt="Image1 z-10" />
             <img src={Image2} alt="Image1 z-11" />
@@ -48,23 +58,28 @@ function ProjectHeader() {
       </div>
       <div className={`${flexStyle} justify-between`}>
         <div className={`${flexStyle} gap-3`}>
-          <Filter />
-          <Date />
+          <div>
+            <Filter />
+          </div>
+          <div>
+            <Date />
+          </div>
         </div>
         <div className={`${flexStyle} gap-5`}>
-          <div
+          <Link
+            to="#"
             className={`${flexStyle} ${fontStyle} rounded-md border border-color-gray-primary px-3 py-2`}
           >
             <UsersIcon className={`${iconStyle} mr-1.5`} />
             Share
-          </div>
+          </Link>
           <span className="h-8 border-r border-color-gray-primary"></span>
-          <div className="rounded-md bg-color-lavender-primary">
+          <button className="rounded-md bg-color-lavender-primary">
             <Bars2Icon className="h-10 p-1 text-color-white-secondary" />
-          </div>
-          <div>
+          </button>
+          <button>
             <Squares2X2Icon className="h-[21px] text-color-gray-primary" />
-          </div>
+          </button>
         </div>
       </div>
     </div>

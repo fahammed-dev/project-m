@@ -9,6 +9,7 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline';
 import { LightBulbIcon } from '@heroicons/react/24/solid';
+import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.png';
 
 type Props = {
@@ -39,26 +40,26 @@ function Sidebar({ aside, setAside }: Props) {
         <div className="h-[100%] rounded-bl-[30px] px-3 py-7">
           {/* pages */}
           <div className="flex flex-col gap-6 border-b border-solid border-color-gray-secondary pb-7 pl-2">
-            <div className={`${flexStyle}`}>
+            <Link to="#" className={`${flexStyle}`}>
               <Squares2X2Icon className={`${iconStyle}`} />
               <h4 className={`${fontStyle}`}>Home</h4>
-            </div>
-            <div className={`${flexStyle}`}>
+            </Link>
+            <Link to="#" className={`${flexStyle}`}>
               <ChatBubbleLeftEllipsisIcon className={`${iconStyle}`} />
               <h4 className={`${fontStyle}`}>Messages</h4>
-            </div>
-            <div className={`${flexStyle}`}>
+            </Link>
+            <Link to="#" className={`${flexStyle}`}>
               <ClipboardDocumentCheckIcon className={`${iconStyle}`} />
               <h4 className={`${fontStyle}`}>Tasks</h4>
-            </div>
-            <div className={`${flexStyle}`}>
+            </Link>
+            <Link to="#" className={`${flexStyle}`}>
               <UsersIcon className={`${iconStyle}`} />
               <h4 className={`${fontStyle}`}>Members</h4>
-            </div>
-            <div className={`${flexStyle}`}>
+            </Link>
+            <Link to="#" className={`${flexStyle}`}>
               <Cog6ToothIcon className={`${iconStyle}`} />
               <h4 className={`${fontStyle}`}>Settings</h4>
-            </div>
+            </Link>
           </div>
           {/* projects */}
           <div className="flex flex-col py-7">
@@ -66,21 +67,21 @@ function Sidebar({ aside, setAside }: Props) {
               <p className="pr-[105px] text-xs font-semibold uppercase text-color-gray-primary">
                 My Projects
               </p>
-              <div>
+              <button>
                 <PlusCircleIcon className="h-4 text-color-gray-primary" />
-              </div>
+              </button>
             </div>
             <div className="flex flex-col gap-1.5">
               <div className={`${projectsStyle} ${flexStyle}`}>
-                <div className={`${flexStyle}`}>
+                <Link to="#" className={`${flexStyle}`}>
                   <span
                     className={`${spanStyle} bg-color-green-primary`}
                   ></span>
                   <h4 className={`${fontStyle}`}>Mobile App</h4>
-                </div>
+                </Link>
                 <EllipsisHorizontalIcon className={`${iconStyle}`} />
               </div>
-              <div className={`${projectsStyle} ${flexStyle}`}>
+              <Link to="#" className={`${projectsStyle} ${flexStyle}`}>
                 <div className={`${flexStyle}`}>
                   <span
                     className={`${spanStyle} bg-color-yellow-primary`}
@@ -88,8 +89,8 @@ function Sidebar({ aside, setAside }: Props) {
                   <h4 className={`${fontStyle}`}>Website Redesign</h4>
                 </div>
                 <EllipsisHorizontalIcon className={`${iconStyle} hidden`} />
-              </div>
-              <div className={`${projectsStyle} ${flexStyle}`}>
+              </Link>
+              <Link to="#" className={`${projectsStyle} ${flexStyle}`}>
                 <div className={`${flexStyle}`}>
                   <span
                     className={`${spanStyle} bg-color-lavender-secondary`}
@@ -97,14 +98,14 @@ function Sidebar({ aside, setAside }: Props) {
                   <h4 className={`${fontStyle}`}>Design System</h4>
                 </div>
                 <EllipsisHorizontalIcon className={`${iconStyle} hidden`} />
-              </div>
-              <div className={`${projectsStyle} ${flexStyle}`}>
+              </Link>
+              <Link to="#" className={`${projectsStyle} ${flexStyle}`}>
                 <div className={`${flexStyle}`}>
                   <span className={`${spanStyle} bg-color-blue-primary`}></span>
                   <h4 className={`${fontStyle}`}>Wireframes</h4>
                 </div>
                 <EllipsisHorizontalIcon className={`${iconStyle} hidden`} />
-              </div>
+              </Link>
             </div>
           </div>
           {/* message */}

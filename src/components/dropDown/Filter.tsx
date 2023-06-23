@@ -17,13 +17,10 @@ function Filter() {
           aria-hidden="true"
         />
       </Menu.Button>
-      <Menu.Items>
+      <Menu.Items className="absolute text-center">
         <Menu.Item>
           {({ active }) => (
-            <a
-              className={`${active && 'bg-blue-500'}`}
-              href="/account-settings"
-            >
+            <a className={`${active && 'bg-blue-500'}`} href="#">
               Mobile App
             </a>
           )}

@@ -7,7 +7,7 @@ function ProjectLayout() {
       <section className="px-11 pt-6">
         <ProjectHeader />
       </section>
-      <section>
+      <section className="px-11 pt-6">
         <Outlet />
       </section>
     </div>
