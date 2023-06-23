@@ -107,7 +107,7 @@ function Header() {
           <button>
             <ChatBubbleLeftEllipsisIcon className={`${iconStyle}`} />
           </button>
-          <button>
+          <button className="before:absolute before:ml-1 before:mt-0.5 before:inline-block before:h-1.5 before:w-1.5 before:rounded-full before:bg-color-pink-primary before:content-['']">
             <BellSnoozeIcon className={`${iconStyle}`} />
           </button>
         </div>

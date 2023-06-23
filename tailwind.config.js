@@ -19,6 +19,7 @@ export default {
       'color-lavender-secondary': '#E4CCFD',
       'color-bg-lavender': '#f1eefd',
       'color-pink-primary': '#D8727D',
+      'color-pink-secondary': '#f4d7da',
       'color-pink-bg': 'rgba(216, 114, 125, 0.1);',
       'color-blue-primary': '#76A5EA',
     },

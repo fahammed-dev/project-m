@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 function ProjectLayout() {
   return (
     <div>
-      <section>
+      <section className="px-11 pt-6">
         <ProjectHeader />
       </section>
       <section>
