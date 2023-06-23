@@ -9,12 +9,19 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline';
 import { LightBulbIcon } from '@heroicons/react/24/solid';
-import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.png';
+
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 type Props = {
   aside: boolean;
   setAside: (value: boolean) => void;
+};
+
+// check current location
+const useActive = (matchPath: string) => {
+  const location = useLocation();
+  return location.pathname === matchPath;
 };
 
 function Sidebar({ aside, setAside }: Props) {
@@ -27,15 +34,17 @@ function Sidebar({ aside, setAside }: Props) {
 
   return (
     <div>
-      <header className="flex items-center justify-between border-b border-solid border-color-gray-secondary px-5 py-[27.25px]">
-        <div className="flex items-center">
-          <img src={Logo} alt="Logo" height="24px" width="24px" />
-          <h1 className="ml-2 text-[20px] font-semibold">Project M.</h1>
-        </div>
-        <button onClick={() => setAside(!aside)}>
-          <ChevronDoubleLeftIcon className="h-[20px] text-color-gray-primary" />
-        </button>
-      </header>
+      <Link to="/">
+        <header className="flex items-center justify-between border-b border-solid border-color-gray-secondary px-5 py-[27.25px]">
+          <div className="flex items-center">
+            <img src={Logo} alt="Logo" height="24px" width="24px" />
+            <h1 className="ml-2 text-[20px] font-semibold">Project M.</h1>
+          </div>
+          <button onClick={() => setAside(!aside)}>
+            <ChevronDoubleLeftIcon className="h-[20px] text-color-gray-primary" />
+          </button>
+        </header>
+      </Link>
       <main>
         <div className="h-[100%] rounded-bl-[30px] px-3 py-7">
           {/* pages */}
@@ -64,7 +73,7 @@ function Sidebar({ aside, setAside }: Props) {
           {/* projects */}
           <div className="flex flex-col py-7">
             <div className="mb-4 flex items-center justify-start pl-2.5">
-              <p className="pr-[105px] text-xs font-semibold uppercase text-color-gray-primary">
+              <p className="pr-[100px] text-xs font-semibold uppercase text-color-gray-primary">
                 My Projects
               </p>
               <button>
@@ -72,47 +81,76 @@ function Sidebar({ aside, setAside }: Props) {
               </button>
             </div>
             <div className="flex flex-col gap-1.5">
-              <div className={`${projectsStyle} ${flexStyle}`}>
-                <Link to="#" className={`${flexStyle}`}>
-                  <span
-                    className={`${spanStyle} bg-color-green-primary`}
-                  ></span>
-                  <h4 className={`${fontStyle}`}>Mobile App</h4>
-                </Link>
-                <EllipsisHorizontalIcon className={`${iconStyle}`} />
-              </div>
-              <Link to="#" className={`${projectsStyle} ${flexStyle}`}>
-                <div className={`${flexStyle}`}>
-                  <span
-                    className={`${spanStyle} bg-color-yellow-primary`}
-                  ></span>
-                  <h4 className={`${fontStyle}`}>Website Redesign</h4>
+              <NavLink
+                to="projects/mobile"
+                className={({ isActive }) =>
+                  isActive ? 'rounded-md bg-color-bg-lavender' : ''
+                }
+              >
+                <div className={`${projectsStyle} ${flexStyle} group`}>
+                  <div className={`${flexStyle}`}>
+                    <span
+                      className={`${spanStyle} bg-color-green-primary`}
+                    ></span>
+                    <h4 className={`${fontStyle}`}>Mobile App</h4>
+                  </div>
+                  <button>
+                    <EllipsisHorizontalIcon
+                      className={`${iconStyle} ${
+                        useActive('/projects/mobile')
+                          ? 'group-block'
+                          : 'hidden group-hover:block'
+                      }`}
+                    />
+                  </button>
                 </div>
-                <EllipsisHorizontalIcon className={`${iconStyle} hidden`} />
-              </Link>
-              <Link to="#" className={`${projectsStyle} ${flexStyle}`}>
-                <div className={`${flexStyle}`}>
-                  <span
-                    className={`${spanStyle} bg-color-lavender-secondary`}
-                  ></span>
-                  <h4 className={`${fontStyle}`}>Design System</h4>
+              </NavLink>
+              <NavLink to="#">
+                <div className={`${projectsStyle} ${flexStyle} group`}>
+                  <div className={`${flexStyle}`}>
+                    <span
+                      className={`${spanStyle} bg-color-yellow-primary`}
+                    ></span>
+                    <h4 className={`${fontStyle}`}>Website Redesign</h4>
+                  </div>
+                  <EllipsisHorizontalIcon
+                    className={`${iconStyle} hidden group-hover:block`}
+                  />
                 </div>
-                <EllipsisHorizontalIcon className={`${iconStyle} hidden`} />
-              </Link>
-              <Link to="#" className={`${projectsStyle} ${flexStyle}`}>
-                <div className={`${flexStyle}`}>
-                  <span className={`${spanStyle} bg-color-blue-primary`}></span>
-                  <h4 className={`${fontStyle}`}>Wireframes</h4>
+              </NavLink>
+              <NavLink to="#">
+                <div className={`${projectsStyle} ${flexStyle} group`}>
+                  <div className={`${flexStyle}`}>
+                    <span
+                      className={`${spanStyle} bg-color-lavender-secondary`}
+                    ></span>
+                    <h4 className={`${fontStyle}`}>Design System</h4>
+                  </div>
+                  <EllipsisHorizontalIcon
+                    className={`${iconStyle} hidden group-hover:block`}
+                  />
                 </div>
-                <EllipsisHorizontalIcon className={`${iconStyle} hidden`} />
-              </Link>
+              </NavLink>
+              <NavLink to="#">
+                <div className={`${projectsStyle} ${flexStyle} group`}>
+                  <div className={`${flexStyle}`}>
+                    <span
+                      className={`${spanStyle} bg-color-blue-primary`}
+                    ></span>
+                    <h4 className={`${fontStyle}`}>Wireframes</h4>
+                  </div>
+                  <EllipsisHorizontalIcon
+                    className={`${iconStyle} hidden group-hover:block`}
+                  />
+                </div>
+              </NavLink>
             </div>
           </div>
           {/* message */}
-          <div className="before:content[''] mx-2 mt-16  flex flex-col items-center rounded-2xl bg-color-white-primary px-5 pb-6 before:-mt-10 before:h-[70px] before:w-[70px] before:rounded-full before:bg-color-white-primary">
-            <div className="-mt-11 mb-6">
+          <div className=" mx-2 mt-16  flex flex-col items-center rounded-2xl bg-color-white-primary px-5 pb-[22px]">
+            <div className="-mt-8 mb-2.5 h-[60px] w-[60px] rounded-full bg-gradient-radial from-amber-200 via-[#f8f4e8] to-color-white-primary">
               <LightBulbIcon
-                className={`${iconStyle} text-color-yellow-secondary`}
+                className={`${iconStyle} ml-[18px] mt-5 text-color-yellow-secondary`}
               />
             </div>
             <h5 className="text-sm font-medium text-color-black-secondary">

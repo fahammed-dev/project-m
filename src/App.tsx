@@ -10,7 +10,7 @@ import { MobileApp } from './pages';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<RootLayout />}>
-      <Route path="/pages" element={<PageLayout />}>
+      <Route path="/" element={<PageLayout />}>
         <Route path="projects" element={<ProjectLayout />}>
           <Route path="mobile" element={<MobileApp />} />
         </Route>

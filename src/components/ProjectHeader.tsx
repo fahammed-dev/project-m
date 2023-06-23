@@ -14,7 +14,7 @@ import Image3 from '../assets/invite-img-3.png';
 import Image4 from '../assets/invite-img-4.png';
 
 function ProjectHeader() {
-  const iconStyle = 'h-[16px] text-color-gray-primary';
+  const iconStyle = 'h-[28px] text-color-gray-primary';
   const fontStyle = 'font-medium text-color-gray-primary';
   const flexStyle = 'flex items-center';
   return (
@@ -36,7 +36,7 @@ function ProjectHeader() {
         <div className={`${flexStyle}`}>
           <button>
             <PlusCircleIcon
-              className={`${iconStyle} h-[15px] rounded-md bg-color-bg-lavender p-0.5 text-color-lavender-primary`}
+              className={`h-[18px] rounded-md bg-color-bg-lavender p-0.5 text-color-lavender-primary`}
             />
           </button>
           <Link
@@ -68,14 +68,14 @@ function ProjectHeader() {
         <div className={`${flexStyle} gap-5`}>
           <Link
             to="#"
-            className={`${flexStyle} ${fontStyle} rounded-md border border-color-gray-primary px-3 py-2`}
+            className={`${flexStyle} ${fontStyle} rounded-md border border-color-gray-primary px-3 py-1.5`}
           >
-            <UsersIcon className={`${iconStyle} mr-1.5`} />
+            <UsersIcon className={`mr-1.5 h-[15px] text-color-gray-primary`} />
             Share
           </Link>
           <span className="h-8 border-r border-color-gray-primary"></span>
           <button className="rounded-md bg-color-lavender-primary">
-            <Bars2Icon className="h-10 p-1 text-color-white-secondary" />
+            <Bars2Icon className="h-[40px] p-1 text-color-white-secondary" />
           </button>
           <button>
             <Squares2X2Icon className="h-[21px] text-color-gray-primary" />
