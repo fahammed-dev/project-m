@@ -30,21 +30,21 @@ function Sidebar({ aside, setAside }: Props) {
   const flexStyle = 'flex items-center gap-3';
   const spanStyle = 'h-2 w-2 inline-block rounded-full';
   const projectsStyle =
-    'justify-between hover:bg-color-bg-lavender rounded-md py-2 px-3';
+    'justify-between hover:bg-color-bg-lavender-secondary rounded-md py-2 px-3';
 
   return (
     <div>
-      <Link to="/">
-        <header className="flex items-center justify-between border-b border-solid border-color-gray-secondary px-5 py-[27.25px]">
+      <header className="flex items-center justify-between border-b border-solid border-color-gray-secondary px-5 py-[27.25px]">
+        <Link to="/">
           <div className="flex items-center">
             <img src={Logo} alt="Logo" height="24px" width="24px" />
             <h1 className="ml-2 text-[20px] font-semibold">Project M.</h1>
           </div>
-          <button onClick={() => setAside(!aside)}>
-            <ChevronDoubleLeftIcon className="h-[20px] text-color-gray-primary" />
-          </button>
-        </header>
-      </Link>
+        </Link>
+        <button onClick={() => setAside(!aside)}>
+          <ChevronDoubleLeftIcon className="h-[20px] text-color-gray-primary" />
+        </button>
+      </header>
       <main>
         <div className="h-[100%] rounded-bl-[30px] px-3 py-7">
           {/* pages */}
@@ -84,7 +84,7 @@ function Sidebar({ aside, setAside }: Props) {
               <NavLink
                 to="projects/mobile"
                 className={({ isActive }) =>
-                  isActive ? 'rounded-md bg-color-bg-lavender' : ''
+                  isActive ? 'rounded-md bg-color-bg-lavender-secondary' : ''
                 }
               >
                 <div className={`${projectsStyle} ${flexStyle} group`}>

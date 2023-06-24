@@ -19,24 +19,24 @@ function ProjectHeader() {
   const flexStyle = 'flex items-center';
   return (
     <div>
-      <div className={`${flexStyle} justify-between pb-7`}>
+      <div className={`${flexStyle} flex-wrap justify-between pb-7`}>
         <div className={`${flexStyle} gap-3`}>
           <h1 className="mr-1.5 text-[46px] font-semibold">Mobile App</h1>
           <button>
             <PencilIcon
-              className={`${iconStyle} rounded-md bg-color-bg-lavender p-1 text-color-lavender-primary`}
+              className={`${iconStyle} rounded-md bg-color-bg-lavender-primary p-1 text-color-lavender-primary`}
             />
           </button>
           <button>
             <EllipsisHorizontalCircleIcon
-              className={`${iconStyle} rounded-md bg-color-bg-lavender p-0.5 text-color-lavender-primary`}
+              className={`${iconStyle} rounded-md bg-color-bg-lavender-primary p-0.5 text-color-lavender-primary`}
             />
           </button>
         </div>
         <div className={`${flexStyle}`}>
           <button>
             <PlusCircleIcon
-              className={`h-[18px] rounded-md bg-color-bg-lavender p-0.5 text-color-lavender-primary`}
+              className={`h-[18px] rounded-md bg-color-bg-lavender-primary p-0.5 text-color-lavender-primary`}
             />
           </button>
           <Link
@@ -56,7 +56,7 @@ function ProjectHeader() {
           </div>
         </div>
       </div>
-      <div className={`${flexStyle} justify-between`}>
+      <div className={`${flexStyle} flex-wrap justify-between`}>
         <div className={`${flexStyle} gap-3`}>
           <div>
             <Filter />

@@ -1,13 +1,18 @@
 import { Sidebar } from '@/components';
 import { useMediaQuery } from '@/hooks';
 
-import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 function RootLayout() {
+  const navigate = useNavigate();
   const [aside, setAside] = useState<boolean>(true);
   const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)');
   const isAboveSmallScreens = useMediaQuery('(min-width: 768px)');
+
+  useEffect(() => {
+    navigate('/projects/mobile');
+  }, [navigate]);
 
   // decide what to render
   let content = null;
