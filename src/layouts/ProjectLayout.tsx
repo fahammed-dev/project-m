@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 
 function ProjectLayout() {
   return (
-    <div>
+    <div className="no-scrollbar max-h-[100vh] overflow-y-auto">
       <section className="px-11 pt-6">
         <ProjectHeader />
       </section>

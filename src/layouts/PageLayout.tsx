@@ -27,7 +27,7 @@ function PageLayout() {
 
   if (!aside && !isAboveMediumScreens) {
     content = (
-      <div className="absolute h-[100%] rounded-bl-[30px] bg-color-white-primary px-6 py-6">
+      <div className="absolute z-[1000] h-[100%] rounded-bl-[30px] bg-color-white-primary px-6 py-6">
         {/* pages */}
         <div className="flex flex-col gap-6 border-b border-solid border-color-gray-secondary pb-8">
           <div className={`${flexStyle}`}>

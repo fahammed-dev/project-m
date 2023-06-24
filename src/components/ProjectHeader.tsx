@@ -19,7 +19,7 @@ function ProjectHeader() {
   const flexStyle = 'flex items-center';
   return (
     <div>
-      <div className={`${flexStyle} flex-wrap justify-between pb-7`}>
+      <div className={`${flexStyle} flex-wrap justify-between`}>
         <div className={`${flexStyle} gap-3`}>
           <h1 className="mr-1.5 text-[46px] font-semibold">Mobile App</h1>
           <button>
@@ -56,7 +56,7 @@ function ProjectHeader() {
           </div>
         </div>
       </div>
-      <div className={`${flexStyle} flex-wrap justify-between`}>
+      <div className={`${flexStyle} mb-4 mt-8 flex-wrap justify-between`}>
         <div className={`${flexStyle} gap-3`}>
           <div>
             <Filter />

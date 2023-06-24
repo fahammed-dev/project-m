@@ -26,7 +26,7 @@ function RootLayout() {
   }
 
   return (
-    <div className=" app py-5">
+    <div className="app py-5">
       <div className="mx-auto flex h-[932px] max-h-[932px] w-[100%] max-w-[1440px] overflow-hidden rounded-[30px] bg-color-white-secondary drop-shadow-2xl">
         {content}
         <main className="flex-1">

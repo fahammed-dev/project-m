@@ -4,16 +4,29 @@ import {
   FolderMinusIcon,
 } from '@heroicons/react/24/outline';
 import CardImg1 from '../../assets/card-img-1.png';
-import Img1 from '../../assets/invite-img-1.png';
-import Img3 from '../../assets/invite-img-3.png';
-import Img2 from '../../assets/invite-img-4.png';
 
-function Card() {
+type PropsType = {
+  task: Task;
+};
+
+type Task = {
+  id: number;
+  tag: 'Low' | 'Medium' | 'High';
+  title: string;
+  description: string;
+  users: { id: number; src: string }[];
+  comments: number;
+  files: number;
+};
+
+function Card({ task }: PropsType) {
+  console.log(task);
+
   const iconStyle = 'h-[16px] text-color-gray-primary';
   const flexStyle = 'flex items-center gap-3';
 
   return (
-    <div className="rounded-2xl bg-color-white-secondary p-5">
+    <div className="mb-5 rounded-2xl bg-color-white-secondary p-5">
       <div className={`${flexStyle} justify-between`}>
         <span className="rounded-md bg-color-yellow-bg px-1.5 py-1 text-xs font-medium text-color-yellow-primary">
           Low
@@ -33,27 +46,16 @@ function Card() {
       </div>
       <div className={`${flexStyle} justify-between`}>
         <div className={`${flexStyle} -space-x-5 overflow-hidden`}>
-          <img
-            src={Img1}
-            alt="User"
-            className="z-30"
-            width="24px"
-            height="24px"
-          />
-          <img
-            src={Img2}
-            alt="User"
-            className="z-20"
-            width="24px"
-            height="24px"
-          />
-          <img
-            src={Img3}
-            alt="User"
-            className="z-10"
-            width="24px"
-            height="24px"
-          />
+          {task.users.map((user) => (
+            <img
+              src={user.src}
+              alt="User"
+              className="z-30 rounded-full"
+              width="24px"
+              height="24px"
+              key={user.id}
+            />
+          ))}
         </div>
         <div className={`${flexStyle}`}>
           <span
