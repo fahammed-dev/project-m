@@ -10,9 +10,7 @@ import Img2 from '../../assets/invite-img-4.png';
 
 function Card() {
   const iconStyle = 'h-[16px] text-color-gray-primary';
-  const fontStyle = 'font-medium text-color-gray-primary';
   const flexStyle = 'flex items-center gap-3';
-  const spanStyle = 'h-2 w-2 inline-block rounded-full';
 
   return (
     <div className="rounded-2xl bg-color-white-secondary p-5">
